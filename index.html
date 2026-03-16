@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liten Solutions | GxP Audit & Life Science Compliance</title>
+<meta name="description" content="Certified Quality Auditor with 13+ years in CSV, GxP audits, technical writing and life science compliance. Serving 50+ global companies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0B1F3A;
+    --navy-mid: #132D52;
+    --gold: #C9A84C;
+    --gold-light: #E5C97A;
+    --cream: #F5F1EA;
+    --cream-dark: #EDE7DA;
+    --text: #1A1A2E;
+    --muted: #5A6170;
+    --white: #FFFFFF;
+    --border: rgba(201,168,76,0.25);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(11,31,58,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--white); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center;
+    padding: 80px 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--cream));
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 900px; margin: 0 auto; width: 100%;
+    animation: fadeUp 0.9s ease both;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block;
+    width: 32px; height: 1px; background: var(--gold);
+  }
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-sub {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 560px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+  .hero-certs {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-bottom: 2.5rem;
+  }
+  .cert-badge {
+    border: 1px solid var(--border);
+    color: var(--gold-light);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 2px;
+  }
+  .hero-cta {
+    display: flex; gap: 14px; flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.3);
+    color: var(--white);
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+
+  /* ── STATS ── */
+  .stats {
+    background: var(--navy-mid);
+    padding: 3rem 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .stats-inner {
+    max-width: 900px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem; text-align: center;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem; color: var(--gold);
+    line-height: 1;
+  }
+  .stat-desc {
+    font-size: 0.8rem; color: rgba(255,255,255,0.55);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-top: 6px;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 900px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+  .section-intro {
+    font-size: 1.05rem; color: var(--muted);
+    max-width: 600px; margin-bottom: 3rem;
+    font-weight: 300; line-height: 1.8;
+  }
+
+  /* ── SERVICES ── */
+  #services { background: var(--cream); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .service-card {
+    background: var(--white);
+    padding: 2rem 1.75rem;
+    border-right: 1px solid var(--cream-dark);
+    border-bottom: 1px solid var(--cream-dark);
+    transition: background 0.2s;
+    position: relative;
+  }
+  .service-card:hover { background: #FAFAF8; }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: var(--gold);
+    transform: scaleX(0); transition: transform 0.25s;
+    transform-origin: left;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon {
+    font-size: 1.5rem; margin-bottom: 1rem;
+    display: block;
+    color: var(--gold);
+  }
+  .service-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem; color: var(--navy);
+    margin-bottom: 0.6rem;
+  }
+  .service-card p {
+    font-size: 0.88rem; color: var(--muted);
+    line-height: 1.7;
+  }
+  .service-tags {
+    margin-top: 1rem;
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .tag {
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--cream-dark);
+    color: var(--navy-mid);
+    padding: 3px 10px; border-radius: 2px;
+  }
+
+  /* ── AUDIT EXPERIENCE ── */
+  #experience { background: var(--navy); color: var(--white); }
+  #experience h2 { color: var(--white); }
+  #experience .section-intro { color: rgba(255,255,255,0.55); }
+  .audit-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+  .audit-group h4 {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .audit-list { list-style: none; }
+  .audit-list li {
+    font-size: 0.88rem; color: rgba(255,255,255,0.7);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex; justify-content: space-between; gap: 1rem;
+  }
+  .audit-list li span {
+    font-size: 0.78rem; color: var(--gold);
+    white-space: nowrap;
+  }
+
+  /* ── IT VENDOR AUDITS ── */
+  .vendor-grid {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-top: 1.5rem;
+  }
+  .vendor-pill {
+    border: 1px solid var(--border);
+    color: rgba(255,255,255,0.7);
+    font-size: 0.8rem;
+    padding: 6px 16px; border-radius: 100px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .vendor-pill:hover { border-color: var(--gold); color: var(--gold-light); }
+
+  /* ── ABOUT ── */
+  #about { background: var(--cream-dark); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: start;
+  }
+  .about-text p { color: var(--muted); margin-bottom: 1rem; font-weight: 300; }
+  .competencies { list-style: none; }
+  .competencies li {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(11,31,58,0.1);
+    display: flex; gap: 12px; align-items: flex-start;
+    font-size: 0.9rem; color: var(--text);
+  }
+  .competencies li::before {
+    content: '▸'; color: var(--gold); font-size: 0.8rem;
+    margin-top: 3px; flex-shrink: 0;
+  }
+  .cert-box {
+    background: var(--navy);
+    border-radius: 4px;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  .cert-box h4 {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .cert-item {
+    display: flex; align-items: center; gap: 10px;
+    color: rgba(255,255,255,0.8); font-size: 0.88rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .cert-item::before { content: '✓'; color: var(--gold); font-weight: 700; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--white); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem;
+    align-items: start;
+  }
+  .contact-info p { color: var(--muted); font-weight: 300; margin-bottom: 1.5rem; }
+  .contact-detail {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.9rem; color: var(--text);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .contact-detail-label {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold);
+    min-width: 80px;
+  }
+  form { display: flex; flex-direction: column; gap: 14px; }
+  form input, form textarea, form select {
+    width: 100%;
+    background: var(--cream);
+    border: 1px solid var(--cream-dark);
+    border-radius: 2px;
+    padding: 12px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  form input:focus, form textarea:focus, form select:focus {
+    border-color: var(--gold);
+  }
+  form textarea { resize: vertical; min-height: 120px; }
+  form select { appearance: none; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-note { font-size: 0.78rem; color: var(--muted); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem; color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .footer-logo span { color: var(--white); }
+  footer p {
+    font-size: 0.78rem; color: rgba(255,255,255,0.35);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ANIMATION ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .nav-links { display: none; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .form-row { grid-template-columns: 1fr; }
+    h1 { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">Liten <span>Solutions</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Life Science Compliance & IT QA</div>
+    <h1>GxP Audit &<br><em>Compliance</em><br>Expertise</h1>
+    <p class="hero-sub">13+ years delivering rigorous GxP audits, Computer System Validation, and technical writing for global life science and technology companies.</p>
+    <div class="hero-certs">
+      <span class="cert-badge">ASQ Certified Quality Auditor</span>
+      <span class="cert-badge">CSV Specialist</span>
+      <span class="cert-badge">50+ Global Clients</span>
+      <span class="cert-badge">GAMP 5 | 21 CFR Part 11 | Annex 11</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Request a Consultation</a>
+      <a href="#services" class="btn-outline">View Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-num">13+</div>
+      <div class="stat-desc">Years of experience</div>
+    </div>
+    <div>
+      <div class="stat-num">50+</div>
+      <div class="stat-desc">Global companies served</div>
+    </div>
+    <div>
+      <div class="stat-num">30+</div>
+      <div class="stat-desc">Onsite GxP audits</div>
+    </div>
+    <div>
+      <div class="stat-num">15+</div>
+      <div class="stat-desc">IT vendor audits</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label reveal">What we offer</div>
+    <h2 class="reveal">Core Services</h2>
+    <p class="section-intro reveal">End-to-end compliance and quality assurance solutions tailored to the life science and technology sectors.</p>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <span class="service-icon">◈</span>
+        <h3>GxP & Compliance Audits</h3>
+        <p>Third-party, vendor, and data centre audits with deep expertise in IT GxP across GMP, GCP, and GLP frameworks.</p>
+        <div class="service-tags">
+          <span class="tag">GMP</span><span class="tag">GCP</span><span class="tag">GLP</span><span class="tag">IT GxP</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">◈</span>
+        <h3>Computer System Validation</h3>
+        <p>Full CSV project management for laboratory systems, manufacturing processes, and data centres per GAMP 5 and 21 CFR Part 11.</p>
+        <div class="service-tags">
+          <span class="tag">CSV</span><span class="tag">GAMP 5</span><span class="tag">21 CFR Part 11</span><span class="tag">Annex 11</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">◈</span>
+        <h3>Technical Writing</h3>
+        <p>Expert creation of SOPs, Work Instructions, compliance plans, and cybersecurity and IT infrastructure documentation.</p>
+        <div class="service-tags">
+          <span class="tag">SOPs</span><span class="tag">Policies</span><span class="tag">WI</span><span class="tag">Compliance Plans</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">◈</span>
+        <h3>Regulatory Compliance</h3>
+        <p>In-depth advisory on Data Integrity, ALCOA+, and international regulatory frameworks. Full support during regulatory audits.</p>
+        <div class="service-tags">
+          <span class="tag">Data Integrity</span><span class="tag">ALCOA+</span><span class="tag">ICH</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">◈</span>
+        <h3>Training & Gap Assessment</h3>
+        <p>Seminars and workshops on GxP, CSV, Data Integrity, and GAMP-5. Pre-audit preparation and gap assessments.</p>
+        <div class="service-tags">
+          <span class="tag">Training</span><span class="tag">Gap Analysis</span><span class="tag">Pre-audit</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">◈</span>
+        <h3>Systems Validation</h3>
+        <p>Audit and validation of complex systems: PLC/SCADA, SAP/ERP, QMS, DMS, BMS, EMS, and serialization platforms.</p>
+        <div class="service-tags">
+          <span class="tag">PLC/SCADA</span><span class="tag">SAP/ERP</span><span class="tag">QMS</span><span class="tag">BMS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label reveal">Track record</div>
+    <h2 class="reveal">Audit Experience</h2>
+    <p class="section-intro reveal">Lead auditor across API manufacturing, injectable plants, R&D facilities, and formulation sites across India, UAE, Bangladesh, and Vietnam.</p>
+
+    <div class="audit-columns reveal">
+      <div class="audit-group">
+        <h4>API Manufacturing</h4>
+        <ul class="audit-list">
+          <li>Macleods Pharmaceuticals, Daman <span>GMP/GLP</span></li>
+          <li>Unimark Remedies, Ahmedabad <span>GMP/GLP</span></li>
+          <li>Dr. Reddy's Laboratories, Hyderabad <span>GMP/GLP</span></li>
+          <li>Sidmak Labs, Dehradun <span>GMP/GLP</span></li>
+        </ul>
+        <h4 style="margin-top:1.5rem">R&D & Bioequivalence</h4>
+        <ul class="audit-list">
+          <li>Sidmak Labs, Valsad <span>GCP/GLP</span></li>
+          <li>Vimta Labs, Hyderabad <span>GCP/GLP</span></li>
+          <li>Macleods R&D, Mumbai <span>GCP/GLP</span></li>
+        </ul>
+      </div>
+      <div class="audit-group">
+        <h4>Injectable & Parenteral</h4>
+        <ul class="audit-list">
+          <li>Sentiss Pharma, Baddi <span>GMP/GLP</span></li>
+          <li>Indoco Remedies, Goa <span>GMP/GLP</span></li>
+          <li>Claris Life Sciences, Ahmedabad <span>GMP/GLP</span></li>
+        </ul>
+        <h4 style="margin-top:1.5rem">Formulation & International</h4>
+        <ul class="audit-list">
+          <li>Life Pharma FZE, Dubai, UAE <span>GMP/GLP</span></li>
+          <li>Square Pharmaceuticals, Bangladesh <span>GMP/GLP</span></li>
+          <li>PHIL Inter Pharma, Vietnam <span>GMP/GLP</span></li>
+          <li>Condot Systems, Mumbai (ISO 9001) <span>QMS</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 3rem;" class="reveal">
+      <div class="section-label">IT GxP vendor audits (remote)</div>
+      <div class="vendor-grid">
+        <span class="vendor-pill">Veeva Systems</span>
+        <span class="vendor-pill">Honeywell</span>
+        <span class="vendor-pill">Microsoft SharePoint</span>
+        <span class="vendor-pill">Microsoft GitHub</span>
+        <span class="vendor-pill">ServiceNow</span>
+        <span class="vendor-pill">Google Apigee</span>
+        <span class="vendor-pill">ValGenesis</span>
+        <span class="vendor-pill">Siemens Automation</span>
+        <span class="vendor-pill">Biovia</span>
+        <span class="vendor-pill">Rockwell Automation</span>
+        <span class="vendor-pill">Benchling</span>
+        <span class="vendor-pill">Signant Health</span>
+        <span class="vendor-pill">Kneat Solutions</span>
+        <span class="vendor-pill">Loftware Inc.</span>
+        <span class="vendor-pill">Dassault Systèmes</span>
+        <span class="vendor-pill">Celgene-BMS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label reveal">Who we are</div>
+    <h2 class="reveal">About Liten Solutions</h2>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>Liten Solutions is a specialist consultancy offering GxP audit, compliance, and quality assurance services to life science and technology organisations worldwide.</p>
+        <p>Led by an ASQ Certified Quality Auditor with over 13 years of hands-on experience, we bring deep technical knowledge and a pragmatic approach to every engagement — from first-time CSV projects to complex multi-site regulatory audits.</p>
+        <p>We have served more than 50 global companies across pharmaceutical manufacturing, biotech, medical devices, and technology sectors, delivering high-quality outcomes that stand up to the most rigorous regulatory scrutiny.</p>
+        <div class="cert-box">
+          <h4>Certifications & Frameworks</h4>
+          <div class="cert-item">ASQ Certified Quality Auditor (CQA)</div>
+          <div class="cert-item">GAMP 5 Practitioner</div>
+          <div class="cert-item">21 CFR Part 11 Compliance</div>
+          <div class="cert-item">EU Annex 11 & ICH Guidelines</div>
+          <div class="cert-item">ISO 9001:2015 Lead Auditor</div>
+          <div class="cert-item">ALCOA+ Data Integrity</div>
+        </div>
+      </div>
+      <div>
+        <ul class="competencies">
+          <li>Expert technical writing: policies, SOPs, Work Instructions, and compliance plans</li>
+          <li>GxP & third-party audits across API, formulation, injectable, and R&D facilities</li>
+          <li>Computer System Validation for lab, manufacturing, and data centre systems</li>
+          <li>IT GxP vendor audits for major technology providers</li>
+          <li>International regulatory audit support (USFDA, WHO, EU)</li>
+          <li>Training in GxP, CSV, Data Integrity, and GAMP-5</li>
+          <li>ISO 9001:2015 QMS certification facilitation</li>
+          <li>Data evaluation & integration plans for laboratory systems</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label reveal">Get in touch</div>
+    <h2 class="reveal">Request a Consultation</h2>
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <p>Whether you need a one-off audit, ongoing compliance support, or a CSV project partner — get in touch and we'll respond within one business day.</p>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Email</span>
+          <span>contact@litensolutions.com</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Based</span>
+          <span>Available globally — remote & onsite</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Response</span>
+          <span>Within 1 business day</span>
+        </div>
+      </div>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Email address" required>
+        </div>
+        <input type="text" name="company" placeholder="Company / Organisation">
+        <select name="service">
+          <option value="" disabled selected>Service of interest</option>
+          <option>GxP / Compliance Audit</option>
+          <option>Computer System Validation (CSV)</option>
+          <option>Technical Writing</option>
+          <option>IT GxP Vendor Audit</option>
+          <option>Training & Gap Assessment</option>
+          <option>Regulatory Audit Support</option>
+          <option>Other</option>
+        </select>
+        <textarea name="message" placeholder="Brief description of your requirement"></textarea>
+        <button type="submit" class="btn-primary" style="border:none;cursor:pointer;width:fit-content;">Send Message</button>
+        <p class="form-note">Your information is kept strictly confidential and will never be shared with third parties.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Liten <span>Solutions</span></div>
+  <p>GxP Audit & Life Science Compliance Specialists &nbsp;·&nbsp; © 2025 Liten Solutions</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
